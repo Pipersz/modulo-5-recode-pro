@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+</head>
+<body>
+	<header class="mb-3" th:fragment="header">
+		<nav class="navbar navbar-expand-lg primary-bg">
+			<div class="menu-mobile">
+		    	<button class="navbar-toggler" 
+		    		type="button" 
+		    		data-toggle="collapse" 
+		    		data-target="#navbarTogglerDemo01" 
+		    		aria-controls="navbarTogglerDemo01" 
+		    		aria-expanded="false" 
+		    		aria-label="Toggle navigation">
+				        	
+		    		<i class="fi fi-rr-menu-burger" style="color: white"></i>
+		      	</button>
+		      	<span>
+		        	<img th:src="@{/images/logo_mercury_2_3.png}" 
+		        		style="height: 30px;" 
+		        		alt="Mercury Viagens">
+		        	<span class="text-white texto-logo">Mercury Viagens</span>
+		      	</span>
+			</div>
+		    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		      	<div class="container">
+		        	<div class="d-flex align-items-center justify-content-between">
+		          		<div class="logo-pc">
+		            		<img th:src="@{/images/logo_mercury_2_3.png}" 
+		            			style="height: 70px;" 
+		            			alt="Mercury Viagens">
+		            		<span class="text-white texto-logo">Mercury Viagens</span>
+		          		</div>
+			          	<div class="navbar-nav ">
+				            <a th:href="@{/admin}" 
+				            	class="text-white nav-item nav-link">Dashboard</a>
+				            <a th:href="@{/admin/destinos}" 
+				            	class="text-white nav-item nav-link">Destinos</a>
+				            <a th:href="@{/admin/pacotes}" 
+				            	class="text-white nav-item nav-link">Pacotes</a>
+				            <a th:href="@{/admin/contatos}" 
+				            	class="text-white nav-item nav-link">Contato</a>
+				            <a th:href="@{/admin/clientes}" 
+				            	class="text-white nav-item nav-link">Clientes</a>
+							<a th:href="@{/admin/vendas}" 
+				            	class="text-white nav-item nav-link">Vendas</a>							
+							<a th:href="@{/logout}" 
+				            	class="text-white nav-item nav-link">Sair</a>				            	
+			          	</div>
+		    		</div>
+		  		</div>
+			</div>
+		</nav>
+	</header>
+</body>
+</html>

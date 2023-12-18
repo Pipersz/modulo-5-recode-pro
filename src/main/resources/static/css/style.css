@@ -1,0 +1,182 @@
+/* Fonte */
+
+@font-face {
+  font-family: GetVoIP_Grotesque;
+  src: URL(/fonts/GetVoIP_Grotesque.ttf) format('truetype');
+}
+
+.texto-logo {
+  font-family: GetVoIP_Grotesque;
+  font-size: 1.5rem;
+}
+
+/* CORES */
+
+:root {
+	--primary: #432b23;
+	--secondary: #debb10;
+	--footer: #a7de3e;
+	--gray: #fbfbfb;
+	
+}
+
+.primary-bg {
+  background-color: var(--primary) !important;
+}
+
+.secondary-bg {
+  /* background-color: #FAD373 !important; */
+  background-color: var(--secondary) !important;
+}
+
+.footer-bg {
+  background-color: var(--footer) !important;
+}
+
+.placeholder-bg {
+  background-color: #FABFAF !important;
+}
+
+.gray-bg {
+  background-color: var(--gray) !important;
+}
+
+.black-bg {
+  background-color: #000;
+}
+
+.menu-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu-mobile {
+    display: block
+  }
+}
+
+.logo-pc {
+  display: block;
+}
+
+@media screen and (max-width: 1023px) {
+  .logo-pc {
+    display: none;
+  }
+}
+
+.btn-cta {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-cta {
+    width: 50%;
+  }
+}
+
+/* PÁGINA INICIAL */
+
+.main-section-carousel-item {
+  color: #fafafa;
+  max-height: 92vh;
+}
+
+.main-section-carousel-item .carousel-caption {
+  width: 50%;
+  top: 35%;
+  z-index: 2;
+}
+
+@media screen and (max-width: 767px) {
+  .main-section-carousel-item .carousel-caption {
+    top: 20%;
+    left: 15%;
+    width: 70%;
+  }
+}
+
+.card-image-container {
+  max-height: 225px;
+  overflow-y: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .card-image-container {
+    max-height: 195px;
+  }
+}
+
+.sales-section .card-image-container {
+  max-height: 600px;
+}
+
+.card-body-description {
+  max-height: 250px;
+}
+
+@media screen and (min-width: 2560px) {
+  .card-body-description {
+    max-height: 216px;
+  }
+}
+
+.sales-section-row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sales-section-row {
+    width: 70%;
+  }
+}
+
+/* DESTINOS */
+
+.card-image-height {
+  max-height: 300px;
+  overflow-y: hidden;
+}
+
+/* PROMOÇÕES */
+
+.sales-row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .sales-row {
+    width: 50%;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.h-250px {
+  height: 250px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.margin-horizontal-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.full-opacity {
+  opacity: 100% !important;
+}
+
+.limite-texto {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: pre; /* or nowrap*/
+}

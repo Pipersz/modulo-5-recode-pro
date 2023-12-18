@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mercury Viagens | Promoções</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
+	<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<header th:replace="fragments/fragments::header">Menu</header>
+  <main>
+    <section class="sales-section pt-5 pb-5">
+      <div class="container">
+        <h2 class="mb-4 text-center">Pacotes de Viagem</h2>
+        <div class="row gy-3 sales-row">
+			
+		  <div class="col-12" th:each="pacote, index : ${pacotes}" th:object="${pacote}">
+            <div class="card">
+              <div th:id="'carouselExampleIndicators' + ${index.index}" 
+              	class="carousel slide" data-ride="carousel">
+    
+                <div class="carousel-inner">
+                  <div class="carousel-item" 
+                  	th:each="imagem, imgIndex : ${pacote.destino.imagens}"
+                  	th:classappend="${imgIndex.index == 0} ? 'active' : ''">
+                    <div class="card-image-container">
+                      <img class="d-block w-100" 
+                      	th:src="@{'data:image/png;base64,'+ ${imagem.toBase64}}" 
+                      	alt="Imagem do destino">
+                    </div>
+                  </div>
+                </div>
+  
+                <a class="carousel-control-prev full-opacity" 
+                	th:href="'#carouselExampleIndicators' + ${index.index}" 
+                	role="button" 
+                	data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next full-opacity" 
+                	th:href="'#carouselExampleIndicators' + ${index.index}" 
+                	role="button" 
+                	data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only"></span>
+                </a>
+              </div>
+  
+              <div class="card-body w-100">
+                <h3 class="card-title" th:text="*{nome}">Pacote</h3>
+                <h4 th:text="*{destino.nome}">Destino</h4>
+                <p class="card-text overflow-y-scroll card-body-description"
+                  th:text="*{destino.descricao}">Descrição</p>
+                <p class="secondary-bg p-1">
+					R$ <span th:text="*{preco}">Preço</span>
+					referente a <span th:text="${pacote.getDuration()}">Duração</span> dia(s)
+					com tudo incluso.
+				</p>
+                <p class="secondary-bg p-1">
+					Parcelamos em <span th:text="*{numMaxPrestacoes}">Prestações</span>x sem juros.
+				</p>
+                <a th:href="@{/contato}" 
+                  class="btn primary-bg text-white d-block w-md-50 margin-horizontal-auto">Mais informações</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+	<footer th:replace="fragments/fragments::footer">Footer</footer>
+</body>
+<div th:replace="fragments/fragments::scripts"></div>
+</html>
